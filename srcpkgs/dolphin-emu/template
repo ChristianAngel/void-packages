@@ -1,20 +1,33 @@
 # Template file for 'dolphin-emu'
 pkgname=dolphin-emu
-version=2409
+version=2506a
 revision=1
 _cubeb_commit=54217bca3f3e0cd53c073690a23dd25d83557909
+_curl_commit=75a2079d5c28debb2eaa848ca9430f1fe0d7844c
+_enet_commit=2a85cd64459f6ba038d233a634d9440490dbba12
+_ffmpeg_bin_commit=9bc087fbca36ce5a85eb4fd73f0c73813593e5a2
 _fmt_commit=e69e5f977d458f2650bb346dadf2ad30c5320281
-_googletest_commit=58d77fa8070e8cec2dc1ed015d66b454c8d78850
-_implot_commit=cc5e1daa5c7f2335a9460ae79c829011dc5cef2d
+_gtest_commit=58d77fa8070e8cec2dc1ed015d66b454c8d78850
+_hidapi_commit=7011fa98af2dde00c298105735e470de800288c7
+_implot_commit=18c72431f8265e2b0b5378a3a73d8a883b2175ff
+_libadrenotools_commit=8fae8ce254dfc1344527e05301e43f37dea2df80
 _libspng_commit=dc5b1032c08efac68ad30170f7ccbf0aa8dd55c9
+_libusb_commit=ba698478afc3d3a72644eef9fc4cd24ce8383a4c
+_lz4_commit=5fc0630a0ed55e9755b0fe3990cd021ae1c3edc1
 _mgba_commit=8739b22fbc90fdf0b4f6612ef9c0520f0ba44a51
-_minizip_ng_commit=3eed562ef0ea3516db30d1c8ecb0e1b486d8cb70
-_rcheevos_commit=d54cf8f1059cebc90a6f5ecdf03df69259f22054
-_sanitizers_cmake_commit=aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a
-_spirv_cross_commit=50b4d5389b6a06f86fb63a2848e1a7da6d9755ca
+_minizip_ng_commit=55db144e03027b43263e5ebcb599bf0878ba58de
+_qt_commit=495517af2b922c10c24f543e0fd6ea3ddf774e50
+_rcheevos_commit=0115d9198ff7a73ff6568027dfb948ef6031818c
+_sdl_commit=c98c4fbff6d8f3016a3ce6685bf8f43433c3efcc
+_sfml_commit=7f1162dfea4969bc17417563ac55d93b72e84c1e
+_spirv_cross_commit=ebe2aa0cd80f5eb5cd8a605da604cacf72205f3b
 _tinygltf_commit=c5641f2c22d117da7971504591a8f6a41ece488b
-_vma_commit=009ecd192c1289c7529bff248a16cfe896254816
+_vulkan_headers_commit=39f924b810e561fd86b2558b6711ca68d4363f68
+_vulkanmemoryallocator_commit=3bab6924988e5f19bf36586a496156cf72f70d9f
+_xxhash_commit=e626a72bc2321cd320e953a0ccf1584cad60f363
 _zlib_ng_commit=ce01b1e41da298334f8214389cc9369540a7560f
+_zstd_commit=f8745da6ff1ad1e7bab384bd1f9d742439278e99
+_sanitizers_cmake_commit=aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a
 archs="x86_64* aarch64* ppc64le* i686"
 build_style=cmake
 configure_args="-DDISTRIBUTOR=voidlinux.org -DENABLE_ANALYTICS=OFF
@@ -30,47 +43,86 @@ short_desc="Gamecube / Wii / Triforce emulator"
 maintainer="Henry Naguski <henry@nilsu.org>"
 license="GPL-2.0-or-later"
 homepage="https://dolphin-emu.org"
-distfiles="https://github.com/dolphin-emu/dolphin/archive/${version}.tar.gz
- https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator/archive/${_vma_commit}.tar.gz
- https://github.com/KhronosGroup/SPIRV-Cross/archive/${_spirv_cross_commit}.tar.gz
- https://github.com/RetroAchievements/rcheevos/archive/${_rcheevos_commit}.tar.gz
- https://github.com/arsenm/sanitizers-cmake/archive/${_sanitizers_cmake_commit}.tar.gz
- https://github.com/epezent/implot/archive/${_implot_commit}.tar.gz
- https://github.com/fmtlib/fmt/archive/${_fmt_commit}.tar.gz
- https://github.com/google/googletest/archive/${_googletest_commit}.tar.gz
- https://github.com/mgba-emu/mgba/archive/${_mgba_commit}.tar.gz
+distfiles="https://codeload.github.com/dolphin-emu/dolphin/tar.gz/refs/tags/${version}>${version}.tar.gz
  https://github.com/mozilla/cubeb/archive/${_cubeb_commit}.tar.gz
+ https://github.com/curl/curl/archive/${_curl_commit}.tar.gz
+ https://github.com/lsalzman/enet/archive/${_enet_commit}.tar.gz
+ https://github.com/dolphin-emu/ext-win-ffmpeg/archive/${_ffmpeg_bin_commit}.tar.gz
+ https://github.com/fmtlib/fmt/archive/${_fmt_commit}.tar.gz
+ https://github.com/google/googletest/archive/${_gtest_commit}.tar.gz
+ https://github.com/libusb/hidapi/archive/${_hidapi_commit}.tar.gz
+ https://github.com/epezent/implot/archive/${_implot_commit}.tar.gz
+ https://github.com/bylaws/libadrenotools/archive/${_libadrenotools_commit}.tar.gz
  https://github.com/randy408/libspng/archive/${_libspng_commit}.tar.gz
- https://github.com/syoyo/tinygltf/archive/${_tinygltf_commit}.tar.gz
+ https://github.com/libusb/libusb/archive/${_libusb_commit}.tar.gz
+ https://github.com/lz4/lz4/archive/${_lz4_commit}.tar.gz
+ https://github.com/mgba-emu/mgba/archive/${_mgba_commit}.tar.gz
  https://github.com/zlib-ng/minizip-ng/archive/${_minizip_ng_commit}.tar.gz
- https://github.com/zlib-ng/zlib-ng/archive/${_zlib_ng_commit}.tar.gz"
-checksum="291723727a3021d381facc47567ad03cad192310c5d59dd37c076ab3e3bd8158
- 5ed5125086a92666f1698df907a29f54f11197c382996094b556a1b22186ecaf
- ed27481a78470fe9905cdfec8fd2ebb6c8f68a17377c2879527c2fcb2a01751c
- bf8e6e9afa865c51ab796c8329df206297b329f008ef0c1308c642480fb2d289
- 9f5b073625375322236a94ce8d2d803cdedad321c91e63845f487b9ebfb2c433
- af51940ae6482c0e96ffb4309982fa309f9aa383cd8f980081681010c8c3a835
+ https://github.com/dolphin-emu/ext-win-qt/archive/${_qt_commit}.tar.gz
+ https://github.com/RetroAchievements/rcheevos/archive/${_rcheevos_commit}.tar.gz
+ https://github.com/libsdl-org/SDL/archive/${_sdl_commit}.tar.gz
+ https://github.com/SFML/SFML/archive/${_sfml_commit}.tar.gz
+ https://github.com/KhronosGroup/SPIRV-Cross/archive/${_spirv_cross_commit}.tar.gz
+ https://github.com/syoyo/tinygltf/archive/${_tinygltf_commit}.tar.gz
+ https://github.com/KhronosGroup/Vulkan-Headers/archive/${_vulkan_headers_commit}.tar.gz
+ https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator/archive/${_vulkanmemoryallocator_commit}.tar.gz
+ https://github.com/Cyan4973/xxHash/archive/${_xxhash_commit}.tar.gz
+ https://github.com/zlib-ng/zlib-ng/archive/${_zlib_ng_commit}.tar.gz
+ https://github.com/facebook/zstd/archive/${_zstd_commit}.tar.gz
+ https://github.com/arsenm/sanitizers-cmake/archive/${_sanitizers_cmake_commit}.tar.gz"
+checksum="0531c69ad0261a62ac4c051471e3d597b720eb5c93b4a04d4b028db2d0b4a179
+ a795511bf56183ff7bad8fb2d2836ca5bb158e12ddd519caced62946ffa69c83
+ e0001ef2698a2e47f324e18e03054ccf7277d550c9452cb20d8a0b18d10dd4ba
+ 526c5af3980edfaebb510119c3311a9062d33ca5599e9f137a88e0d8a3be67a6
+ c98cd87480eb2d58dadc961dc7925696694de4a211d30892127fe1dc7c092785
  1723f27eed50e751037f49dcdf73e33b17658f1178ea1c1f829a30bb02335745
  c6ab3b6b33f51ef7465921f8f8c10c15d7cbc510761a15a18ad85babf6d73278
- 07e73f02198affccf83cc9740d377b78ba27866b0d654a5e55cafae69d1dfa1c
- a795511bf56183ff7bad8fb2d2836ca5bb158e12ddd519caced62946ffa69c83
+ 15bd23ea79256252dfb64ad84ae6aef690c45b4e241a52c9d2c92e520beff480
+ 4787c77e6050f3bdc19f39eecf87d5b321bd3096321142b63f8169e1aa8f9b34
+ ceffce971676d4cfdf348a082df06fc92a1dca6d95bea892a480d63f200961cb
  2486cf203f8a201448ebd34949bc7f73038781a9099e205e55f1907fa91931bc
+ 4c626d89ebd984778684a9da3a215958300aa9c3a3f34f0baff6ba0dbb526110
+ e969c292da59dd1163b3daabf31728f14f1dbe6a007e73e1cc6659fee6979bd2
+ 07e73f02198affccf83cc9740d377b78ba27866b0d654a5e55cafae69d1dfa1c
+ e0fa42896ad244261f100fd06fae7c64f6054ce02d143f4d0f55df5fced9f63d
+ d25e81600e14c73f0892afc2f7775f10dac448ed0a0924982cc767735b9d52fd
+ 81d5d35e8b03194c103ceaedab1f37c473062d0907b496c50481f862f80c654d
+ f317865b415d06c9cc24a705d21f77ed5a944c438630faec43ba26b41914ffde
+ 503d90b6576a3343f7344ee5eff8642d06a487db3a83b5f36e92359f4cc896a7
+ ff848426a2eabfa0dfb5ee961440210f6cdec190883ed438ee7252ba595c9128
  6352803f1ed18d479ea93abf96ac75c0222a21403be22840bde1072ee5935dfa
- 1ef4831d653c78439baa68f6f5d9b9dba54411ad89b1695031c4ecffaf4ff103
- 64a6d355d2d5c9449fc047e5bb0ca32875fc385061dfaf1df3aa791577b7ff5e"
+ 8c5a5dae1baf6b8eabe6eb04625940eac8af4f1bf3ae3121c28dbc1583d36553
+ 618dc35e4f571a508575fc1fc914eb15ab513e4443986509aff08dfb8844ba24
+ 34e71c085636fbc1726482996d92719d0a16e6a6097970ecf2990a27b3821162
+ 64a6d355d2d5c9449fc047e5bb0ca32875fc385061dfaf1df3aa791577b7ff5e
+ 4b0bd1f0cfb25e61b9103c35f27395530ff5b4c0d2513a00fd745849e85ea52c
+ 9f5b073625375322236a94ce8d2d803cdedad321c91e63845f487b9ebfb2c433"
 skip_extraction="${_cubeb_commit}.tar.gz
+ ${_curl_commit}.tar.gz
+ ${_enet_commit}.tar.gz
+ ${_ffmpeg_bin_commit}.tar.gz
  ${_fmt_commit}.tar.gz
- ${_googletest_commit}.tar.gz
+ ${_gtest_commit}.tar.gz
+ ${_hidapi_commit}.tar.gz
  ${_implot_commit}.tar.gz
+ ${_libadrenotools_commit}.tar.gz
  ${_libspng_commit}.tar.gz
+ ${_libusb_commit}.tar.gz
+ ${_lz4_commit}.tar.gz
  ${_mgba_commit}.tar.gz
  ${_minizip_ng_commit}.tar.gz
+ ${_qt_commit}.tar.gz
  ${_rcheevos_commit}.tar.gz
- ${_sanitizers_cmake_commit}.tar.gz
+ ${_sdl_commit}.tar.gz
+ ${_sfml_commit}.tar.gz
  ${_spirv_cross_commit}.tar.gz
  ${_tinygltf_commit}.tar.gz
- ${_vma_commit}.tar.gz
- ${_zlib_ng_commit}.tar.gz"
+ ${_vulkan_headers_commit}.tar.gz
+ ${_vulkanmemoryallocator_commit}.tar.gz
+ ${_xxhash_commit}.tar.gz
+ ${_zlib_ng_commit}.tar.gz
+ ${_zstd_commit}.tar.gz
+ ${_sanitizers_cmake_commit}.tar.gz"
 
 case "$XBPS_TARGET_MACHINE" in
 	i686*) CFLAGS=-msse2 ;;
@@ -82,19 +134,32 @@ case "$XBPS_TARGET_MACHINE" in
 esac
 
 post_extract() {
-	vsrcextract -C Externals/VulkanMemoryAllocator ${_vma_commit}.tar.gz
-	vsrcextract -C Externals/cubeb/cubeb ${_cubeb_commit}.tar.gz
+        vsrcextract -C Externals/cubeb/cubeb ${_cubeb_commit}.tar.gz
+        vsrcextract -C Externals/curl/curl ${_curl_commit}.tar.gz
+        vsrcextract -C Externals/enet/enet ${_enet_commit}.tar.gz
+        vsrcextract -C Externals/FFmpeg-bin ${_ffmpeg_bin_commit}.tar.gz
+        vsrcextract -C Externals/fmt/fmt ${_fmt_commit}.tar.gz
+        vsrcextract -C Externals/gtest ${_gtest_commit}.tar.gz
+        vsrcextract -C Externals/hidapi/hidapi-src ${_hidapi_commit}.tar.gz
+        vsrcextract -C Externals/implot/implot ${_implot_commit}.tar.gz
+        vsrcextract -C Externals/libadrenotools ${_libadrenotools_commit}.tar.gz
+        vsrcextract -C Externals/libspng/libspng ${_libspng_commit}.tar.gz
+        vsrcextract -C Externals/libusb/libusb ${_libusb_commit}.tar.gz
+        vsrcextract -C Externals/lz4/lz4 ${_lz4_commit}.tar.gz
+        vsrcextract -C Externals/mGBA/mgba ${_mgba_commit}.tar.gz
+        vsrcextract -C Externals/minizip-ng/minizip-ng ${_minizip_ng_commit}.tar.gz
+        vsrcextract -C Externals/Qt ${_qt_commit}.tar.gz
+        vsrcextract -C Externals/rcheevos/rcheevos ${_rcheevos_commit}.tar.gz
+        vsrcextract -C Externals/SDL/SDL ${_sdl_commit}.tar.gz
+        vsrcextract -C Externals/SFML/SFML ${_sfml_commit}.tar.gz
+        vsrcextract -C Externals/spirv_cross/SPIRV-Cross ${_spirv_cross_commit}.tar.gz
+        vsrcextract -C Externals/tinygltf/tinygltf ${_tinygltf_commit}.tar.gz
+        vsrcextract -C Externals/Vulkan-Headers ${_vulkan_headers_commit}.tar.gz
+        vsrcextract -C Externals/VulkanMemoryAllocator ${_vulkanmemoryallocator_commit}.tar.gz
+        vsrcextract -C Externals/xxhash/xxHash ${_xxhash_commit}.tar.gz
+        vsrcextract -C Externals/zlib-ng/zlib-ng ${_zlib_ng_commit}.tar.gz
+        vsrcextract -C Externals/zstd/zstd ${_zstd_commit}.tar.gz
 	vsrcextract -C Externals/cubeb/cubeb/cmake/sanitizers-cmake ${_sanitizers_cmake_commit}.tar.gz
-	vsrcextract -C Externals/fmt/fmt ${_fmt_commit}.tar.gz
-	vsrcextract -C Externals/gtest ${_googletest_commit}.tar.gz
-	vsrcextract -C Externals/implot/implot ${_implot_commit}.tar.gz
-	vsrcextract -C Externals/libspng/libspng ${_libspng_commit}.tar.gz
-	vsrcextract -C Externals/mGBA/mgba ${_mgba_commit}.tar.gz
-	vsrcextract -C Externals/minizip-ng/minizip-ng ${_minizip_ng_commit}.tar.gz
-	vsrcextract -C Externals/rcheevos/rcheevos ${_rcheevos_commit}.tar.gz
-	vsrcextract -C Externals/spirv_cross/SPIRV-Cross ${_spirv_cross_commit}.tar.gz
-	vsrcextract -C Externals/tinygltf/tinygltf ${_tinygltf_commit}.tar.gz
-	vsrcextract -C Externals/zlib-ng/zlib-ng ${_zlib_ng_commit}.tar.gz
 	cp -r Externals/gtest/* Externals/cubeb/cubeb/googletest
 }
 
