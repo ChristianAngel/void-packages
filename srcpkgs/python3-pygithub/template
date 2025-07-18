@@ -1,0 +1,15 @@
+pkgname=python3-pygithub
+version=2.6.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm"
+makedepends="python3-devel"
+depends="python3 python3-deprecated python3-PyJWT python3-pynacl python3-requests python3-typing_extensions python3-urllib3"
+checkdepends="python3-pytest"
+short_desc="Use the full Github API v3"
+maintainer="Christian Angel <change1@umbc.edu>"
+license="Unknown"
+homepage="https://pypi.org/project/pygithub"
+changelog=""
+distfiles="${PYPI_SITE}/p/pygithub/pygithub-${version}.tar.gz"
+checksum=b5c035392991cca63959e9453286b41b54d83bf2de2daa7d7ff7e4312cebf3bf

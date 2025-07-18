@@ -1,0 +1,15 @@
+pkgname=python3-pyls-spyder
+version=0.4.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+makedepends="python3-devel"
+depends="python3 python3-lsp-server"
+checkdepends="python3-pytest"
+short_desc="Spyder extensions for the python-lsp-server"
+maintainer="Christian Angel <change1@umbc.edu>"
+license="MIT"
+homepage="https://github.com/spyder-ide/pyls-spyder"
+changelog=""
+distfiles="${PYPI_SITE}/p/pyls-spyder/pyls-spyder-${version}.tar.gz"
+checksum=45a321c83f64267d82907492c55199fccabda45bc872dd23bf1efd08edac1b0b

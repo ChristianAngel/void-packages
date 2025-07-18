@@ -1,0 +1,15 @@
+pkgname=python3-superqt
+version=0.7.5
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools hatchling hatch-vcs"
+makedepends="python3-devel"
+depends="python3 python3-Pygments python3-QtPy python3-typing_extensions"
+checkdepends="python3-pytest"
+short_desc="Missing widgets and components for PyQt/PySide"
+maintainer="Christian Angel <change1@umbc.edu>"
+license="BSD 3-Clause License"
+homepage="https://pypi.org/project/superqt"
+changelog=""
+distfiles="${PYPI_SITE}/s/superqt/superqt-${version}.tar.gz"
+checksum=6cf6650d5458355cc640e8f77fc09cd228e74053e0cc9df861f15405192dc8b3

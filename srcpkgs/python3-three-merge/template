@@ -1,0 +1,15 @@
+pkgname=python3-three-merge
+version=0.1.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+makedepends="python3-devel"
+depends="python3 python3-diff_match_patch"
+checkdepends="python3-pytest"
+short_desc="Simple library for merging two strings with respect to a base one"
+maintainer="Christian Angel <change1@umbc.edu>"
+license="MIT"
+homepage="https://github.com/spyder-ide/three-merge"
+changelog=""
+distfiles="${PYPI_SITE}/t/three-merge/three-merge-${version}.tar.gz"
+checksum=60f6afe144595560d63ae32625351bcef3b94733b54eb97800a9feb0f3d9d970

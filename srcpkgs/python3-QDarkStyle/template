@@ -1,0 +1,15 @@
+pkgname=python3-QDarkStyle
+version=3.2.3
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+makedepends="python3-devel"
+depends="python3 python3-QtPy"
+checkdepends="python3-pytest"
+short_desc="The most complete dark/light style sheet for C++/Python and Qt applications"
+maintainer="Christian Angel <change1@umbc.edu>"
+license="MIT"
+homepage="https://github.com/ColinDuquesnoy/QDarkStyleSheet"
+changelog=""
+distfiles="${PYPI_SITE}/q/QDarkStyle/QDarkStyle-${version}.tar.gz"
+checksum=0c0b7f74a6e92121008992b369bab60468157db1c02cd30d64a5e9a3b402f1ae
