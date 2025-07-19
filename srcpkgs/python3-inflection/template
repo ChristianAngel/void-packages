@@ -1,3 +1,4 @@
+# Template file for 'python3-inflection'
 pkgname=python3-inflection
 version=0.5.1
 revision=1
@@ -6,10 +7,13 @@ hostmakedepends="python3-setuptools"
 makedepends="python3-devel"
 depends="python3"
 checkdepends="python3-pytest"
-short_desc="A port of Ruby on Rails inflector to Python"
+short_desc="Port of Ruby on Rails inflector to Python"
 maintainer="Christian Angel <change1@umbc.edu>"
 license="MIT"
 homepage="https://github.com/jpvanhal/inflection"
-changelog=""
 distfiles="${PYPI_SITE}/i/inflection/inflection-${version}.tar.gz"
 checksum=1a29730d366e996aaacffb2f1f1cb9593dc38e2ddd30c91250c6dde09ea9b417
+
+post_install() {
+	vlicense LICENSE
+}

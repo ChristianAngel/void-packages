@@ -1,3 +1,4 @@
+# Template file for 'python3-textdistance'
 pkgname=python3-textdistance
 version=4.6.3
 revision=1
@@ -6,10 +7,13 @@ hostmakedepends="python3-setuptools"
 makedepends="python3-devel"
 depends="python3"
 checkdepends="python3-pytest"
-short_desc="Compute distance between the two texts."
+short_desc="Compute distance between the two texts"
 maintainer="Christian Angel <change1@umbc.edu>"
 license="MIT"
 homepage="https://github.com/orsinium/textdistance"
-changelog=""
 distfiles="${PYPI_SITE}/t/textdistance/textdistance-${version}.tar.gz"
 checksum=d6dabc50b4ea832cdcf0e1e6021bd0c7fcd9ade155888d79bb6a3c31fce2dc6f
+
+post_install() {
+	vlicense LICENSE
+}

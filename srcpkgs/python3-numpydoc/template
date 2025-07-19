@@ -1,3 +1,4 @@
+# Template file for 'python3-numpydoc'
 pkgname=python3-numpydoc
 version=1.9.0
 revision=1
@@ -8,8 +9,11 @@ depends="python3 python3-Sphinx"
 checkdepends="python3-pytest"
 short_desc="Sphinx extension to support docstrings in Numpy format"
 maintainer="Christian Angel <change1@umbc.edu>"
-license="Copyright (C) 2008-2023 Stefan van der Walt <stefan@mentat.za.net>, Pauli Virtanen <pav@iki.fi>"
+license="BSD-2-Clause"
 homepage="https://numpydoc.readthedocs.io"
-changelog=""
 distfiles="${PYPI_SITE}/n/numpydoc/numpydoc-${version}.tar.gz"
 checksum=5fec64908fe041acc4b3afc2a32c49aab1540cf581876f5563d68bb129e27c5b
+
+post_install() {
+	vlicense LICENSE.txt
+}

@@ -1,3 +1,4 @@
+# Template file for 'python3-diff_match_patch'
 pkgname=python3-diff_match_patch
 version=20241021
 revision=1
@@ -6,10 +7,9 @@ hostmakedepends="python3-flit_core python3-setuptools"
 makedepends="python3-devel"
 depends="python3"
 checkdepends="python3-pytest"
-short_desc="Repackaging of Google's Diff Match and Patch libraries."
+short_desc="Repackaging of Google's Diff Match and Patch libraries"
 maintainer="Christian Angel <change1@umbc.edu>"
-license="Unknown"
+license="Apache-2.0"
 homepage="https://pypi.org/project/diff_match_patch"
-changelog=""
 distfiles="${PYPI_SITE}/d/diff_match_patch/diff_match_patch-${version}.tar.gz"
 checksum=beae57a99fa48084532935ee2968b8661db861862ec82c6f21f4acdd6d835073

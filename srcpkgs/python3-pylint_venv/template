@@ -1,3 +1,4 @@
+# Template file for 'python3-pylint_venv'
 pkgname=python3-pylint_venv
 version=3.0.4
 revision=1
@@ -6,10 +7,13 @@ hostmakedepends="python3-setuptools python3-poetry-core"
 makedepends="python3-devel"
 depends="python3"
 checkdepends="python3-pytest"
-short_desc="pylint-venv provides a Pylint init-hook to use the same Pylint installation with different virtual environments."
+short_desc="Init-hook to use the same Pylint installation with different venvs"
 maintainer="Christian Angel <change1@umbc.edu>"
 license="MIT"
 homepage="https://github.com/jgosmann/pylint-venv/"
-changelog=""
 distfiles="${PYPI_SITE}/p/pylint_venv/pylint_venv-${version}.tar.gz"
 checksum=4c71c2ad14fc0549699440bcc460994ffddc1481b9078404b4c43d2806ef0f59
+
+post_install() {
+	vlicense LICENSE.txt
+}

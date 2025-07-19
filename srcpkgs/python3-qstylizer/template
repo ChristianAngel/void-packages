@@ -1,3 +1,4 @@
+# Template file for 'python3-qstylizer'
 pkgname=python3-qstylizer
 version=0.2.4
 revision=1
@@ -10,6 +11,9 @@ short_desc="Stylesheet Generator for PyQt{4-5}/PySide{1-2}"
 maintainer="Christian Angel <change1@umbc.edu>"
 license="MIT"
 homepage="https://github.com/blambright/qstylizer"
-changelog=""
 distfiles="${PYPI_SITE}/q/qstylizer/qstylizer-${version}.tar.gz"
 checksum=4880991d912c9837454832e8e2b58d60b66848d8c4a7cf57ed544fd68b91a23a
+
+post_install() {
+	vlicense LICENSE.txt
+}

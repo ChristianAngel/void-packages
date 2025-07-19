@@ -1,3 +1,4 @@
+# Template file for 'python3-spyder_kernels'
 pkgname=python3-spyder_kernels
 version=3.0.5
 revision=1
@@ -10,6 +11,9 @@ short_desc="Jupyter kernels for Spyder's console"
 maintainer="Christian Angel <change1@umbc.edu>"
 license="MIT"
 homepage="https://github.com/spyder-ide/spyder-kernels"
-changelog=""
 distfiles="${PYPI_SITE}/s/spyder_kernels/spyder_kernels-${version}.tar.gz"
 checksum=ff7a1e832eed723575882b86c81c8f82ed8d6929c05c399bac2771d605578cd8
+
+post_install() {
+	vlicense LICENSE.txt
+}

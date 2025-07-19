@@ -1,3 +1,4 @@
+# Template file for 'python3-pyuca'
 pkgname=python3-pyuca
 version=1.2
 revision=1
@@ -6,10 +7,14 @@ hostmakedepends="python3-setuptools"
 makedepends="python3-devel"
 depends="python3"
 checkdepends="python3-pytest"
-short_desc="a Python implementation of the Unicode Collation Algorithm"
+short_desc="Python implementation of the Unicode Collation Algorithm"
 maintainer="Christian Angel <change1@umbc.edu>"
 license="MIT"
 homepage="http://github.com/jtauber/pyuca"
-changelog=""
 distfiles="${PYPI_SITE}/p/pyuca/pyuca-${version}.tar.gz"
 checksum=8a382fe74627f08c0d18908c0713ca4a20aad5385f077579e56208beea2893b2
+
+post_install() {
+	vlicense LICENSE
+	vlicense LICENSE-allkeys
+}

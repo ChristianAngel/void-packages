@@ -1,3 +1,4 @@
+# Template file for 'python3-superqt'
 pkgname=python3-superqt
 version=0.7.5
 revision=1
@@ -8,8 +9,11 @@ depends="python3 python3-Pygments python3-QtPy python3-typing_extensions"
 checkdepends="python3-pytest"
 short_desc="Missing widgets and components for PyQt/PySide"
 maintainer="Christian Angel <change1@umbc.edu>"
-license="BSD 3-Clause License"
+license="BSD-3-Clause"
 homepage="https://pypi.org/project/superqt"
-changelog=""
 distfiles="${PYPI_SITE}/s/superqt/superqt-${version}.tar.gz"
 checksum=6cf6650d5458355cc640e8f77fc09cd228e74053e0cc9df861f15405192dc8b3
+
+post_install() {
+	vlicense LICENSE
+}
