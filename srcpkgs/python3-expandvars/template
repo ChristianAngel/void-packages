@@ -1,0 +1,19 @@
+# Template file for 'python3-expandvars'
+pkgname=python3-expandvars
+version=1.1.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools hatchling"
+makedepends="python3-devel"
+depends="python3"
+checkdepends="python3-pytest"
+short_desc="Expand system variables Unix style"
+maintainer="Christian Angel <change1@umbc.edu>"
+license="MIT"
+homepage="https://github.com/sayanarijit/expandvars"
+distfiles="${PYPI_SITE}/e/expandvars/expandvars-${version}.tar.gz"
+checksum=98add8268b760dfee457bde1c17bf745795fdebc22b7ddab75fd3278653f1e05
+
+post_install() {
+	vlicense LICENSE
+}
